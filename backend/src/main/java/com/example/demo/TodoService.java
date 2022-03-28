@@ -3,6 +3,8 @@ package com.example.demo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class TodoService {
@@ -15,5 +17,9 @@ public class TodoService {
         return todoRepository.save(item);
 
 
+    }
+
+    public List<Item> findAll() {
+        return todoRepository.findAll();
     }
 }
