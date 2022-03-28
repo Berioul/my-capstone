@@ -1,6 +1,9 @@
 import {useState} from "react";
-
-export default function TodoForm() {
+import {Item} from "../TodoList/model";
+interface TodoFormProps{
+    onItemCreate: () => void;
+}
+export default function TodoForm(props: TodoFormProps) {
     const[subject,setSubject]= useState('');
     const[description,setDescription]= useState('');
     const[category,setCategory]= useState('');
@@ -18,6 +21,7 @@ export default function TodoForm() {
 
             })
         })
+            .then(() => props.onItemCreate())
     }
 
     return (
