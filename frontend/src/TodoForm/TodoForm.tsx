@@ -26,7 +26,7 @@ export default function TodoForm() {
             <input type='text' placeholder='Title' value={subject} onChange={ev => setSubject(ev.target.value)} />
             <input type='text' placeholder='Description' value={description} onChange={ev => setDescription(ev.target.value)}/>
             <input type='text' placeholder='Category' value={category} onChange={ev => setCategory(ev.target.value)} />
-            <button onClick={() => saveTodoSubject()}>Add todo</button>
+            <button onClick={() => saveTodoSubject()}>Add</button>
         </div>
     )
 }
