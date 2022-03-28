@@ -6,7 +6,7 @@ export default function TodoForm() {
     const[category,setCategory]= useState('');
 
     const saveTodoSubject = () => {
-        fetch('http://localhost:8090/api/todos',{
+        fetch('/api/todos',{
             method:'post',
             headers: {
                 'Content-Type': 'application/json'
