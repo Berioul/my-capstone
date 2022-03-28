@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {Item} from "../TodoList/model";
 interface TodoFormProps{
     onItemCreate: () => void;
 }
