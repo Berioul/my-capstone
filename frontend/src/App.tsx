@@ -24,7 +24,7 @@ function App() {
     return (
         <div className="App">
             <TodoForm onItemCreate={itemCreated}/>
-            <TodoList items={items}/>
+            { items.length > 0 && <TodoList items={items}/>}
         </div>
     );
 }

@@ -11,6 +11,11 @@ public class TodoService {
 
     private final TodoRepository todoRepository;
 
+    public void deleteById(String id) {
+
+        todoRepository.deleteById(id);
+    }
+
 
     public Item creatItem(Item item) {
 
