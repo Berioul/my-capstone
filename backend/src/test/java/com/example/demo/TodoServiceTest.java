@@ -39,7 +39,7 @@ class TodoServiceTest {
         Assertions.assertThat(actual).isEqualTo(List.of(item, item1, item2));
     }
     @Test
-    void schouldDeleteItem(){
+    void shouldDeleteItem(){
 
         TodoRepository todoRepository = Mockito.mock(TodoRepository.class);
         TodoService todoService = new TodoService(todoRepository);
