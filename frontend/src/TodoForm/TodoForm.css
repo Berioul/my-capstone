@@ -1,0 +1,28 @@
+.photo{
+    margin-left: 320px;
+    border: solid black 2px;
+    width: 250px;
+    height: 100px;
+}
+.photo1{
+
+    border: solid black 2px;
+    width: 250px;
+    height: 100px;
+}
+.titre{
+    text-decoration: underline;
+    margin-left: 450px;
+
+}
+.formPlaces{
+
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 350px;
+}
+.select{
+
+    margin-top: 32px;
+    margin-left: 650px;
+}

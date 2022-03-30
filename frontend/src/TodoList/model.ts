@@ -1,7 +1,14 @@
+
+export interface Category{
+    name: string;
+    items: Array<Item>;
+
+}
 export interface Item{
     subject : string;
     description : string;
     category : string;
+    done:boolean;
     links: Array<Link>
 }
 

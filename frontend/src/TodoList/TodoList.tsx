@@ -1,16 +1,18 @@
-import {Item} from "./model";
-import TodoItem from "./TodoItem";
-import {useState} from "react";
+import {Category} from "./model";
+import TodoCategory from "./TodoCategory";
 interface TodoListProps{
-    items: Array<Item>
+    categories: Array<Category>
+    onItemDeleted: () => void;
 }
 export default function TodoList (props:TodoListProps){
 
-    const [actualItems, setActualItems] = useState(props.items)
+
 
     return(
         <div>
-            {actualItems.map((item,index) => <div key={`${item.subject}-${index}`}><TodoItem item ={item} onItemDeleted={setActualItems} /></div>)}
+            {props.categories.map((category,index) => <div key={`${category.name}-${index}`}>
+                <TodoCategory category={category}  onItemDeleted={props.onItemDeleted} />
+            </div>) }
         </div>
     )
 }

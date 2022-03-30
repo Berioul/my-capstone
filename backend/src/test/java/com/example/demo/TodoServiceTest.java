@@ -12,8 +12,8 @@ class TodoServiceTest {
 
     @Test
     void shouldCreateItem(){
-        Item item = new Item(null,"oualid","after capstone","urlaub");
-        Item savedItem = new Item("200","oualid","after capstone","urlaub");
+        Item item = new Item(null,"oualid","after capstone","urlaub",true);
+        Item savedItem = new Item("200","oualid","after capstone","urlaub",false);
         TodoRepository todoRepository = Mockito.mock(TodoRepository.class);
         Mockito.when(todoRepository.save(item)).thenReturn(savedItem);
 
@@ -25,9 +25,9 @@ class TodoServiceTest {
     }
     @Test
     void shouldGetAllItems(){
-        Item item = new Item("123","oualid","after capstone","urlaub");
-        Item item1 = new Item("1234","passport","capstone","urlaub");
-        Item item2 = new Item("12345","telephone","befor capstone","urlaub");
+        Item item = new Item("123","oualid","after capstone","urlaub", true);
+        Item item1 = new Item("1234","passport","capstone","urlaub",true);
+        Item item2 = new Item("12345","telephone","befor capstone","urlaub",true);
 
         TodoRepository todoRepository = Mockito.mock(TodoRepository.class);
         Mockito.when(todoRepository.findAll()).thenReturn(List.of(item, item1, item2));
@@ -38,7 +38,7 @@ class TodoServiceTest {
 
         Assertions.assertThat(actual).isEqualTo(List.of(item, item1, item2));
     }
-    @Test
+   @Test
     void schouldDeleteItem(){
 
         TodoRepository todoRepository = Mockito.mock(TodoRepository.class);
@@ -47,4 +47,6 @@ class TodoServiceTest {
         todoService.deleteById("123");
         Mockito.verify(todoRepository).deleteById("123");
     }
+
+
 }
