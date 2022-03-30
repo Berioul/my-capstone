@@ -27,4 +27,11 @@ public class TodoController {
                 .map(ItemDTO::of)
                 .toList();
     }
+    @DeleteMapping("/{id}")
+    public List<ItemDTO> deleteItem (@PathVariable String id){
+        todoService.deleteById(id);
+        return todoService.findAll().stream()
+                .map(ItemDTO::of)
+                .toList();
+    }
 }
