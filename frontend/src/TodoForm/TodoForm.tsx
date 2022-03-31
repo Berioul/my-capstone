@@ -30,8 +30,8 @@ export default function TodoForm(props: TodoFormProps) {
         <div>
             <h1 className='titre'>Check-List de voyage</h1>
             <div>
-            <img className='photo' src={logo} alt="Photo de vacance"/>
-                <img className='photo1' src={logo1} alt="Photo de vacance"/>
+            <img className='photo' src={logo} alt=" vacance  "/>
+                <img className='photo1' src={logo1} alt=" vacance"/>
             </div>
             <div className='formPlaces'>
             <input type='text' placeholder='Title' value={subject} onChange={ev => setSubject(ev.target.value)} />

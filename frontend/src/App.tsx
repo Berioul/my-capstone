@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import TodoForm from "./TodoForm/TodoForm";
 import TodoList from "./TodoList/TodoList";
-import {Category, Item} from "./TodoList/model";
+import {Category} from "./TodoList/model";
 
 function App() {
 
