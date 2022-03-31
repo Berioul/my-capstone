@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -41,9 +42,21 @@ public class TodoController {
 
     }
 
-    @PutMapping("/{id}")
+   /* @PutMapping("/{id}")
     public void itemDone(@PathVariable String id) {
         todoService.completItem(id);
     }
+
+    */
+
+    @PutMapping("/{id}")
+    public List<ItemDTO> changeItem(@PathVariable String id,@RequestBody ItemDTO item){
+        todoService.changeItem(id,item.toItem());
+        return todoService.findAll().stream()
+                .map(ItemDTO::of)
+                .toList();
+
+    }
+
 
 }
