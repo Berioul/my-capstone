@@ -9,6 +9,7 @@ export interface Item{
     description : string;
     category : string;
     done:boolean;
+    privat:boolean;
     links: Array<Link>
 }
 

@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface TodoRepository extends MongoRepository<Item,String> {
     List<Item> findByCategory(String category);
+    void deleteByIdAndPrivatFalse (String id);
 }

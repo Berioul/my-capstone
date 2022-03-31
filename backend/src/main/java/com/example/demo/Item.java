@@ -19,8 +19,7 @@ public class Item {
     private String description;
     private String category;
     private boolean done;
-
-
+    private boolean privat;
 
 
 }

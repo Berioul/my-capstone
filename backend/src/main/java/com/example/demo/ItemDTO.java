@@ -16,6 +16,7 @@ public class ItemDTO {
     private String description;
     private String category;
     private boolean done;
+    private boolean privat;
     private List<Link> links;
 
 
@@ -30,11 +31,11 @@ public class ItemDTO {
 
         );
 
-        return new ItemDTO(item.getSubject(), item.getDescription(), item.getCategory(),item.isDone(),links);
+        return new ItemDTO(item.getSubject(), item.getDescription(), item.getCategory(),item.isDone(), item.isPrivat(),links);
     }
 
     public Item toItem() {
-        return new Item(null, subject, description, category,done);
+        return new Item(null, subject, description, category,done,privat);
 
     }
 }

@@ -14,9 +14,10 @@ public class TodoService {
     private final TodoRepository todoRepository;
 
     public void deleteById(String id) {
+        todoRepository.deleteByIdAndPrivatFalse(id);
 
-           todoRepository.deleteById(id);
-        }
+
+    }
 
 
 

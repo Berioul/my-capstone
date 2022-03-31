@@ -27,7 +27,8 @@ export default function TodoItem(props: TodoItemProps){
         <div>
             <input type='radio' className={props.item.done ? 'selected':''} onClick={toggle}/>
             {props.item.subject} | {props.item.description}
-            <button className='deleteButton' onClick={deleteItem}>Delete</button>
+            {!props.item.privat &&  <button className='deleteButton' onClick={deleteItem}>Delete</button>}
+
         </div>
     )
 
