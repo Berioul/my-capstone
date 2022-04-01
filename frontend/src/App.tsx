@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import TodoForm from "./TodoForm/TodoForm";
 import TodoList from "./TodoList/TodoList";
-import {Item} from "./TodoList/model";
+import {Category} from "./TodoList/model";
 
 function App() {
 
-    const [items, setItems] = useState([] as Array<Item>)
+    const [categories, setCategories] = useState([] as Array<Category>)
     const fetchAll = () => {
-        fetch('/api/todos')
+        fetch('/api/categories')
             .then(response => response.json())
-            .then((responseBody: Array<Item>) => setItems(responseBody));
+            .then((responseBody: Array<Category>) => setCategories(responseBody));
 
     }
 
@@ -24,7 +24,7 @@ function App() {
     return (
         <div className="App">
             <TodoForm onItemCreate={itemCreated}/>
-            { items.length > 0 && <TodoList items={items}/>}
+            { categories.length > 0 && <TodoList categories={categories} onItemDeleted={fetchAll}/>}
         </div>
     );
 }
