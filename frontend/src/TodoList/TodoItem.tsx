@@ -4,7 +4,7 @@ import {useState} from "react";
 
 interface TodoItemProps {
     item: Item;
-    onItemDeleted: (items: Array<Item>) => void;
+    onItemChange: (items: Array<Item>) => void;
 
 
 }
@@ -19,7 +19,7 @@ export default function TodoItem(props: TodoItemProps) {
             method: 'DELETE'
         })
             .then(response => response.json())
-            .then((items: Array<Item>) => props.onItemDeleted(items))
+            .then((items: Array<Item>) => props.onItemChange(items))
     };
 
     const editItem = (item: { subject: string; description: string; category: string }) => {
@@ -32,7 +32,7 @@ export default function TodoItem(props: TodoItemProps) {
         })
             .then(response => response.json())
             .then((items: Array<Item>) => {
-                props.onItemDeleted(items)
+                props.onItemChange(items)
                 setEditMode(false);
             });
 
@@ -61,7 +61,7 @@ export default function TodoItem(props: TodoItemProps) {
             body: JSON.stringify(toggleItem)
         })
             .then(response => response.json())
-            .then((items: Array<Item>) => props.onItemDeleted(items))
+            .then((items: Array<Item>) => props.onItemChange(items))
 
     };
 
