@@ -38,10 +38,10 @@ export default function TodoItem(props: TodoItemProps) {
             });
 
     }
-    const ediTodo = () =>{
+    const ediTodo = () => {
         editItem({
-            subject:subjectToEdit,
-            description:descriptionToEdit,
+            subject: subjectToEdit,
+            description: descriptionToEdit,
             category: props.item.category
 
         });
@@ -80,14 +80,18 @@ export default function TodoItem(props: TodoItemProps) {
 
                         <input type="text" value={descriptionToEdit}
                                onChange={ev => setDescriptionToEdit(ev.target.value)}
-                               onKeyUp={ev => {if(ev.keyCode === 13){ediTodo();}}}/>
+                               onKeyUp={ev => {
+                                   if (ev.keyCode === 13) {
+                                       ediTodo();
+                                   }
+                               }}/>
 
                         <button onClick={ediTodo}>Change</button>
 
                     </div>
                     :
 
-                    <div className={props.item.done ? 'selected' : ''} >
+                    <div className={props.item.done ? 'selected' : ''}>
                         <input type='checkbox' onClick={toggle}/>
                         {props.item.subject} {props.item.description}
                         {!props.item.privat && <button className='deleteButton' onClick={deleteItem}>Delete</button>}
