@@ -3,6 +3,7 @@ import TodoForm from "./TodoForm/TodoForm";
 import TodoList from "./TodoList/TodoList";
 import {Category} from "./TodoList/model";
 
+
 function App() {
 
     const [categories, setCategories] = useState([] as Array<Category>)
@@ -24,7 +25,7 @@ function App() {
     return (
         <div className="App">
             <TodoForm onItemCreate={itemCreated}/>
-            { categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
+            {categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
         </div>
     );
 }
