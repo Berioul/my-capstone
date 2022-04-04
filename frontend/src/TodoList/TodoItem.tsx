@@ -1,10 +1,11 @@
 import {Item} from "./model";
 import './TodoItem.css'
+
 import {useState} from "react";
 
 interface TodoItemProps {
     item: Item;
-    onItemChange: (items: Array<Item>) => void;
+    onItemListChange: (items: Array<Item>) => void;
 
 
 }
@@ -19,7 +20,7 @@ export default function TodoItem(props: TodoItemProps) {
             method: 'DELETE'
         })
             .then(response => response.json())
-            .then((items: Array<Item>) => props.onItemChange(items))
+            .then((items: Array<Item>) => props.onItemListChange(items))
     };
 
     const editItem = (item: { subject: string; description: string; category: string }) => {
@@ -32,7 +33,7 @@ export default function TodoItem(props: TodoItemProps) {
         })
             .then(response => response.json())
             .then((items: Array<Item>) => {
-                props.onItemChange(items)
+                props.onItemListChange(items)
                 setEditMode(false);
             });
 
@@ -61,12 +62,11 @@ export default function TodoItem(props: TodoItemProps) {
             body: JSON.stringify(toggleItem)
         })
             .then(response => response.json())
-            .then((items: Array<Item>) => props.onItemChange(items))
+            .then((items: Array<Item>) => props.onItemListChange(items))
 
     };
 
     return (
-
 
         <div>
             {
@@ -87,12 +87,11 @@ export default function TodoItem(props: TodoItemProps) {
                     </div>
                     :
 
-                    <div>
-
-                        <input type='checkbox' className={props.item.done ? 'selected' : ''} onClick={toggle}/>
-                        {props.item.subject} | {props.item.description}
+                    <div className={props.item.done ? 'selected' : ''} >
+                        <input type='checkbox' onClick={toggle}/>
+                        {props.item.subject} {props.item.description}
                         {!props.item.privat && <button className='deleteButton' onClick={deleteItem}>Delete</button>}
-                        <button onClick={() => setEditMode(true)}>Edit</button>
+                        {!props.item.privat && <button onClick={() => setEditMode(true)}>Edit</button>}
                     </div>
             }
         </div>

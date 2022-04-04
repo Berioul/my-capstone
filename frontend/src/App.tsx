@@ -24,7 +24,7 @@ function App() {
     return (
         <div className="App">
             <TodoForm onItemCreate={itemCreated}/>
-            { categories.length > 0 && <TodoList categories={categories} onItemDeleted={fetchAll}/>}
+            { categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
         </div>
     );
 }
