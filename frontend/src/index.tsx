@@ -2,15 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Map from "./Map/Map";
 import "./index.css"
+import {BrowserRouter,Route,Routes} from "react-router-dom";
+
+import RegisterForm from "./auth/RegisterForm";
+import AuthProvider from "./auth/AuthProvider";
+
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <Map/>
-        <App />
+        <BrowserRouter>
+            <AuthProvider>
+                <Routes>
+                    <Route path='/' element={<RegisterForm />} />
+                    <Route path='App' element={<App/>} />
+                </Routes>
+            </AuthProvider>
+        </BrowserRouter>
     </React.StrictMode>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
