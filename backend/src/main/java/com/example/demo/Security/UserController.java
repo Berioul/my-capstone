@@ -3,16 +3,16 @@ package com.example.demo.Security;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 
 @RestController
@@ -43,14 +43,16 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Token> login(@RequestBody LoginData loginData) {
+    public Token login(@RequestBody LoginData loginData) {
         LOGGER.info("user with username {} tries to log in", loginData.getUsername());
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginData.getUsername(), loginData.getPassword()));
-            return ResponseEntity.ok(new Token(jwtUtils.createToken(new HashMap<>(), loginData.getUsername())));
-        } catch (AuthenticationException e) {
-            LOGGER.info("user " + loginData.getUsername() + " could not be authenticated", e);
-            return ResponseEntity.status(401).build();
+            Token token = new Token();
+            token.setToken(jwtUtils.createToken(new HashMap<>(), loginData.getUsername()));
+            return token;
+        } catch (Exception e) {
+            LOGGER.info("user " + loginData.getUsername() + " could not be authenticated", e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
     }
 

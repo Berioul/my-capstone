@@ -19,7 +19,7 @@ export default function AuthProvider({ children }: Param) {
     useEffect(() => {
         localStorage.setItem('jwt', token);
         if (token) {
-            setTimeout(() => navigate('/glossary'));
+            setTimeout(() => navigate('/'));
         } else {
             setTimeout(() => navigate('/'));
         }
@@ -28,27 +28,32 @@ export default function AuthProvider({ children }: Param) {
     const register = (username: string, password: string, passwordAgain: string) => {
         return fetch(`/api/users`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: JSON.stringify({
                 username,
                 password,
                 passwordAgain
-            })
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+
+
+
+            }
         })
     };
 
     const login = (username: string, password: string) => {
         return fetch(`/api/users/login`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+
             body: JSON.stringify({
                 username: username,
                 password: password
-            })
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+
+            }
         })
             .then(response => {
                 if (response.status === 401 || response.status === 403) {

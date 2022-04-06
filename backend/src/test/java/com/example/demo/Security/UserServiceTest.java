@@ -52,7 +52,7 @@ class UserServiceTest {
         User existingUser = new User("0014","oualid","hash");
 
         UserRepo userRepo = Mockito.mock(UserRepo.class);
-        Mockito.when( userRepo.findByUserName("oualid")).thenReturn(Optional.of(existingUser));
+        Mockito.when( userRepo.findByUsername("oualid")).thenReturn(Optional.of(existingUser));
 
 
         UserService userService = new UserService(userRepo, Mockito.mock(PasswordEncoder.class));
