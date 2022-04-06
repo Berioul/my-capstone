@@ -1,7 +1,7 @@
 import {Item} from "./model";
 import './TodoItem.css'
-
 import {useState} from "react";
+import {useAuth} from "../auth/AuthProvider";
 
 interface TodoItemProps {
     item: Item;
@@ -10,14 +10,20 @@ interface TodoItemProps {
 
 }
 
+
 export default function TodoItem(props: TodoItemProps) {
     const [subjectToEdit, setSubjectToEdit] = useState(props.item.subject);
     const [descriptionToEdit, setDescriptionToEdit] = useState(props.item.description);
     const [editMode, setEditMode] = useState(false);
-
+    const { token } = useAuth()
     const deleteItem = () => {
         fetch(`${props.item.links.find(l => l.rel === 'self')?.href}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+
+                'Authorization':  `Bearer ${token}`,
+            },
+
         })
             .then(response => response.json())
             .then((items: Array<Item>) => props.onItemListChange(items))
@@ -27,7 +33,8 @@ export default function TodoItem(props: TodoItemProps) {
         fetch(`${props.item.links.find(l => l.rel === 'self')?.href}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization':  `Bearer ${token}`,
             },
             body: JSON.stringify(item)
         })
@@ -56,7 +63,8 @@ export default function TodoItem(props: TodoItemProps) {
         fetch(`${props.item.links.find(l => l.rel === 'self')?.href}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization':  `Bearer ${token}`
 
             },
             body: JSON.stringify(toggleItem)

@@ -3,6 +3,7 @@ import TodoForm from "./TodoForm/TodoForm";
 import TodoList from "./TodoList/TodoList";
 import {Category} from "./TodoList/model";
 import {useAuth} from "./auth/AuthProvider";
+import Map from "./Map/Map";
 
 
 
@@ -38,6 +39,7 @@ function App() {
                 <ul>
                     <li><span className="clickable" onClick={() => logout()}>Logout</span></li>
                 </ul>
+                <div><Map/> </div>
             </nav>
             <TodoForm onItemCreate={itemCreated}/>
             {categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
