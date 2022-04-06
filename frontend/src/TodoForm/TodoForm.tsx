@@ -1,5 +1,6 @@
 import {useState} from "react";
 import './TodoForm.css'
+import {useAuth} from "../auth/AuthProvider";
 interface TodoFormProps{
     onItemCreate: () => void;
 }
@@ -8,11 +9,13 @@ export default function TodoForm(props: TodoFormProps) {
     const[description,setDescription]= useState('');
     const[category,setCategory]= useState('Avant le depart');
 
+    const {token} = useAuth()
     const saveTodoSubject = () => {
         fetch('/api/todos',{
             method:'post',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
                 subject: subject,
