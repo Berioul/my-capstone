@@ -15,10 +15,10 @@ import java.util.List;
 
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
-    private final JwtUtils jwtService;
+    private final JwtUtils jwtUtils;
 
-    public JwtAuthFilter(JwtUtils jwtService) {
-        this.jwtService = jwtService;
+    public JwtAuthFilter(JwtUtils jwtUtils) {
+        this.jwtUtils = jwtUtils;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String token = getAuthToken(request);
         if (token != null && !token.isBlank()) {
             try {
-                Claims claims = jwtService.extractClaims(token);
+                Claims claims = jwtUtils.extractClaims(token);
                 setSecurityContext(claims.getSubject());
                 filterChain.doFilter(request, response);
             } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException | SignatureException | IllegalArgumentException e) {
