@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import TodoForm from "./TodoForm/TodoForm";
 import TodoList from "./TodoList/TodoList";
 import {Category} from "./TodoList/model";
@@ -13,7 +13,7 @@ function App() {
 
     const {token, logout} = useAuth()
 
-    const fetchAll = () => {
+    const fetchAll = useCallback (() => {
         fetch('/api/categories', {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -22,11 +22,11 @@ function App() {
             .then(response => response.json())
             .then((responseBody: Array<Category>) => setCategories(responseBody));
 
-    }
+    },[token])
 
     useEffect(() => {
         fetchAll()
-    }, [])
+    }, [fetchAll])
 
 
     const itemCreated = () => {

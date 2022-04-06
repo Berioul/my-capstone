@@ -34,11 +34,13 @@ export default function RegisterForm() {
     return (
         <>
             <div>
+                <h4>Login</h4>
                 <input data-testid="login-username" type="text" placeholder="Username" value={loginUsername} onChange={ev => setLoginUsername(ev.target.value)} />
                 <input data-testid="login-password" type="password" placeholder="Passwort" value={loginPassword} onChange={ev => setLoginPassword(ev.target.value)} />
                 <button data-testid="login-button" onClick={doLogin}>Login</button>
             </div>
             <div>
+                <h4>Register</h4>
                 <input type="text" placeholder="Username" value={username} onChange={ev => setUsername(ev.target.value)} />
                 <input type="password" placeholder="Passwort" value={password} onChange={ev => setPassword(ev.target.value)} />
                 <input type="password" placeholder="Passwort wiederholen" value={passwordAgain} onChange={ev => setPasswordAgain(ev.target.value)} />
