@@ -11,6 +11,6 @@ public class UserCreationData {
 
     private String username;
     private String password;
-    private String PasswordAgain;
+    private String passwordAgain;
 
 }

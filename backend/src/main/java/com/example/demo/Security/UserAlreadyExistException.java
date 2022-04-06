@@ -3,6 +3,6 @@ package com.example.demo.Security;
 public class UserAlreadyExistException extends IllegalStateException{
 
     UserAlreadyExistException(){
-        super("user already exist");
+        super("user already exists");
     }
 }

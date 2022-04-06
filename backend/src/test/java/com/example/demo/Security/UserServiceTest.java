@@ -43,7 +43,7 @@ class UserServiceTest {
 
          Assertions.assertThatExceptionOfType(IllegalStateException.class)
                  .isThrownBy(() -> userService.createUser(userCreationData))
-                 .withMessage("password do not match");
+                 .withMessage("password does not match");
 
     }
     @Test
@@ -59,7 +59,7 @@ class UserServiceTest {
 
         Assertions.assertThatExceptionOfType(IllegalStateException.class)
                 .isThrownBy(() -> userService.createUser(userCreationData))
-                .withMessage("user already exist");
+                .withMessage("user already exists");
 
     }
 
