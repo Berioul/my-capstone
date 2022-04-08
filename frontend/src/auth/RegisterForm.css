@@ -4,3 +4,10 @@
     border-width : 2px;
     border-style: solid;
 }
+.loginRegister{
+    flex-direction: column;
+
+    padding: 20px;
+    border:solid black 2px;
+    margin-top: 20px;
+}

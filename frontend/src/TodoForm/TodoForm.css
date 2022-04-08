@@ -1,19 +1,13 @@
-.photo{
-    margin-left: 320px;
-    border: solid black 2px;
-    width: 250px;
-    height: 100px;
-}
-.photo1{
+
+.photo1 {
+
 
     border: solid black 2px;
-    width: 250px;
-    height: 100px;
+    width: 350px;
+    height: 200px;
 }
 .titre{
     text-decoration: underline;
-    margin-left: 450px;
-
 }
 .formPlaces{
 
@@ -26,3 +20,15 @@
     margin-top: 32px;
     margin-left: 650px;
 }
+
+
+
+.buttonAdd{
+    background-color: transparent;
+    border: 1px solid #a071b8;
+    color: #a071b8;
+    cursor: pointer;
+    font-size: .9rem;
+    padding: 0.16667rem 0.33333rem;
+}
+

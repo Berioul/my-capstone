@@ -4,6 +4,7 @@ import TodoList from "./TodoList/TodoList";
 import {Category} from "./TodoList/model";
 import {useAuth} from "./auth/AuthProvider";
 import Map from "./Map/Map";
+import './App.css'
 
 
 
@@ -33,17 +34,17 @@ function App() {
         fetchAll()
     }
     return (
-
+<div>
         <div className="App">
-            <nav>
-                <ul>
-                    <li><span className="clickable" onClick={() => logout()}>Logout</span></li>
-                </ul>
-                <div><Map/> </div>
-            </nav>
+
+
+
             <TodoForm onItemCreate={itemCreated}/>
             {categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
         </div>
+    <div><Map/></div>
+    <nav><button className="Logout" onClick={() => logout()}>Logout</button></nav>
+</div>
     );
 }
 

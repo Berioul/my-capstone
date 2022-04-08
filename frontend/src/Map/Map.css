@@ -1,4 +1,4 @@
-.map-container {
-    border: solid 1px black;
-    margin-top: 20px;
+.map-container{
+    position: fixed;
+    border: solid 2px black
 }

@@ -26,14 +26,13 @@ export default function TodoForm(props: TodoFormProps) {
         })
             .then(() => props.onItemCreate())
     }
-    const logo = require('./photo.JPG');
+
     const logo1 = require('./Panama+San+Blas_9.jpg');
     return (
 
         <div>
             <h1 className='titre'>Check-List de voyage</h1>
             <div>
-            <img className='photo' src={logo} alt=" Une plage de Tunise  "/>
                 <img className='photo1' src={logo1} alt=" Catamaran dans les îles San Blas "/>
             </div>
             <div className='formPlaces'>
@@ -44,13 +43,13 @@ export default function TodoForm(props: TodoFormProps) {
                 <select className="select" value={category} onChange={ev => setCategory(ev.target.value)}>
 
                     <option value="Avant le depart">Avant le depart</option>
+                    <option value="Navigation">Navigation</option>
                     <option value="Multicoques">Multicoques</option>
                     <option value="pharmacie">pharmacie</option>
                     <option value="Document">Document</option>
                 </select>
-                <button className="add" onClick={() => saveTodoSubject()}>Add</button>
+                <button  className='buttonAdd' onClick={() => saveTodoSubject()}>Add</button>
             </div>
-
         </div>
 
     )
