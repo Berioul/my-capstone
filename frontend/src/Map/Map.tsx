@@ -1,7 +1,7 @@
 
 // @ts-ignore
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import "./Map.css"
 import {RulerControl} from "mapbox-gl-controls";
 import'mapbox-gl/dist/mapbox-gl.css'
