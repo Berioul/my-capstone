@@ -15,8 +15,8 @@ export default function Map() {
 
     const mapContainer = useRef( null);
     const map = useRef(null as mapboxgl.Map);
-    const [lng , setLng] = useState(5.36978 );
-    const [lat , setLat] = useState(43.296482)
+    const lng =5.36978;
+    const lat =43.296482;
     const zoom  = 6.5;
 
 

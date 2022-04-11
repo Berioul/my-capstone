@@ -37,8 +37,6 @@ function App() {
 <div>
         <div className="App">
 
-
-
             <TodoForm onItemCreate={itemCreated}/>
             {categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
         </div>
