@@ -12,7 +12,6 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "bulma": "^0.9.3",
-    "mapbox-gl": "^2.6.1",
     "mapbox-gl-controls": "^2.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
