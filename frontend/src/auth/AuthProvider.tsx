@@ -62,6 +62,8 @@ export default function AuthProvider({ children }: Param) {
                 return response.json();
             })
             .then((token: Token) => setToken(token.token))
+
+
     }
 
     const logout = () => {

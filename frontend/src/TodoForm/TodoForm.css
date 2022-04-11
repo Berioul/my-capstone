@@ -6,24 +6,24 @@
     width: 350px;
     height: 200px;
 }
-.titre{
+
+.titre {
     text-decoration: underline;
 }
-.formPlaces{
 
+.formPlaces {
     position: absolute;
-    margin-top: 30px;
-    margin-left: 350px;
-}
-.select{
-
-    margin-top: 32px;
-    margin-left: 650px;
+    margin-left: 550px;
 }
 
+.select {
 
+    margin-top: 1px;
+    margin-left: 850px;
+}
 
-.buttonAdd{
+/*
+.buttonAdd {
     background-color: transparent;
     border: 1px solid #a071b8;
     color: #a071b8;
@@ -31,4 +31,6 @@
     font-size: .9rem;
     padding: 0.16667rem 0.33333rem;
 }
+
+ */
 
