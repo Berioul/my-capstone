@@ -48,7 +48,7 @@ export default function TodoForm(props: TodoFormProps) {
                     <option value="pharmacie">pharmacie</option>
                     <option value="Document">Document</option>
                 </select>
-                <button  className='buttonAdd' onClick={() => saveTodoSubject()}>Add</button>
+                <button  className='button is-' onClick={() => saveTodoSubject()}>Add</button>
             </div>
         </div>
 
