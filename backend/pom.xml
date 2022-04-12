@@ -84,7 +84,9 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                     </execution>
+
                     <execution>
+
                         <id>npm install</id>
                         <phase>generate-sources</phase>
                         <goals>
@@ -108,6 +110,9 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
+                            <environmentVariables>
+                                <max_old_space_size>4096</max_old_space_size>
+                            </environmentVariables>
                             <arguments>run build</arguments>
                         </configuration>
                     </execution>
