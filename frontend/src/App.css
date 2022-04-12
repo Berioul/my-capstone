@@ -1,0 +1,16 @@
+.Logout{
+    margin-top: 20px;
+    margin-left:1200px;
+}
+
+.App{
+  color: hsl(205, 38%, 46%);
+    animation: wheelHuecolor 100s infinite;
+    background-color: currentColor;
+}
+@supports (background-blend-mode: overlay) {
+    .App{
+        background-image: linear-gradient(90deg, white 20%, #061d2c 90%);
+        background-blend-mode: overlay;
+    }
+}

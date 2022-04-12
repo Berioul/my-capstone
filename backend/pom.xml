@@ -39,7 +39,6 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -64,7 +63,6 @@
             <artifactId>de.flapdoodle.embed.mongo</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -86,7 +84,9 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                     </execution>
+
                     <execution>
+
                         <id>npm install</id>
                         <phase>generate-sources</phase>
                         <goals>
@@ -110,6 +110,9 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
+                            <environmentVariables>
+                                <max_old_space_size>8192</max_old_space_size>
+                            </environmentVariables>
                             <arguments>run build</arguments>
                         </configuration>
                     </execution>
