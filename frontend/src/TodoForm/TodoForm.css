@@ -1,13 +1,14 @@
 
 .photo1 {
-
-
-    border: solid black 2px;
+    margin-left: 550px;
+    border: solid gray 2px;
     width: 350px;
     height: 200px;
 }
 
 .titre {
+
+    color: #3c3e4b;
     text-decoration: underline;
 }
 

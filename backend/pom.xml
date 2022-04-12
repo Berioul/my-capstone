@@ -63,7 +63,6 @@
             <artifactId>de.flapdoodle.embed.mongo</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -74,7 +73,7 @@
                 <version>1.8.0</version>
                 <configuration>
                     <nodeVersion>v16.13.1</nodeVersion>
-                    <npmVersion>12.10.0</npmVersion>
+                    <npmVersion>8.1.2</npmVersion>
                     <workingDirectory>${project.parent.basedir}/frontend</workingDirectory>
                 </configuration>
                 <executions>

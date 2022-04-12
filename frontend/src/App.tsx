@@ -7,14 +7,13 @@ import Map from "./Map/Map";
 import './App.css'
 
 
-
 function App() {
 
     const [categories, setCategories] = useState([] as Array<Category>)
 
     const {token, logout} = useAuth()
 
-    const fetchAll = useCallback (() => {
+    const fetchAll = useCallback(() => {
         fetch('/api/categories', {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -23,7 +22,7 @@ function App() {
             .then(response => response.json())
             .then((responseBody: Array<Category>) => setCategories(responseBody));
 
-    },[token])
+    }, [token])
 
     useEffect(() => {
         fetchAll()
@@ -34,15 +33,18 @@ function App() {
         fetchAll()
     }
     return (
-<div>
-        <div className="App">
+        <div>
 
-            <TodoForm onItemCreate={itemCreated}/>
-            {categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
+            <div className="App">
+                <div><Map/></div>
+                <TodoForm onItemCreate={itemCreated}/>
+                {categories.length > 0 && <TodoList categories={categories} onItemListChange={fetchAll}/>}
+            </div>
+
+            <nav>
+                <button className="Logout" onClick={() => logout()}>Logout</button>
+            </nav>
         </div>
-    <div><Map/></div>
-    <nav><button className="Logout" onClick={() => logout()}>Logout</button></nav>
-</div>
     );
 }
 

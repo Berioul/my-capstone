@@ -9,8 +9,6 @@ interface TodoListProps{
 }
 export default function TodoList (props:TodoListProps){
 
-
-
     return(
         <div className='Categ'>
             {props.categories.map((category,index) => <div key={`${category.name}-${index}`}>
