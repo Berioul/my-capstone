@@ -111,7 +111,7 @@
                         </goals>
                         <configuration>
                             <environmentVariables>
-                                <max_old_space_size>4096</max_old_space_size>
+                                <max_old_space_size>8192</max_old_space_size>
                             </environmentVariables>
                             <arguments>run build</arguments>
                         </configuration>
