@@ -26,7 +26,7 @@ export default function TodoForm(props: TodoFormProps) {
         })
             .then(() => props.onItemCreate())
     }
-
+    const logo = require('./photo.JPG');
     const logo1 = require('./Panama+San+Blas_9.jpg');
     return (
 
@@ -34,6 +34,7 @@ export default function TodoForm(props: TodoFormProps) {
             <h1 className='titre'>Check-List de voyage</h1>
             <div>
                 <img className='photo1' src={logo1} alt=" Catamaran dans les îles San Blas "/>
+                <img className={'photo'} src={logo} alt='plage en tunisie'/>
             </div>
             <div className='formPlaces'>
             <input type='text' placeholder='Title' value={subject} onChange={ev => setSubject(ev.target.value)} />

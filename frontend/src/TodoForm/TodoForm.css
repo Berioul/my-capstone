@@ -6,11 +6,19 @@
     height: 200px;
 }
 
+.photo {
+    margin-left: 193px;
+    border: solid gray 2px;
+    width: 350px;
+    height: 200px;
+}
+
 .titre {
 
     color: #3c3e4b;
     text-decoration: underline;
 }
+
 
 .formPlaces {
     position: absolute;
@@ -18,12 +26,11 @@
 }
 
 .select {
-
     margin-top: 1px;
     margin-left: 850px;
 }
 
-/*
+
 .buttonAdd {
     background-color: transparent;
     border: 1px solid #a071b8;
@@ -33,5 +40,5 @@
     padding: 0.16667rem 0.33333rem;
 }
 
- */
+
 
