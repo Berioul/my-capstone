@@ -1,4 +1,11 @@
 .Categ{
 
-    color: #720a0f;
+    font-family: sans-serif ;
+    font-size: 11px;
+    color: #46352b;
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-evenly;
+
+
 }
