@@ -31,25 +31,25 @@ export default function TodoForm(props: TodoFormProps) {
     return (
 
         <div>
-            <h1 className='titre'>Check-List de voyage</h1>
+            <h1 className='titre'>Voyage en Voilier</h1>
             <div>
                 <img className='photo1' src={logo1} alt=" Catamaran dans les îles San Blas "/>
                 <img className={'photo'} src={logo} alt='plage en tunisie'/>
             </div>
             <div className='formPlaces'>
-            <input type='text' placeholder='Title' value={subject} onChange={ev => setSubject(ev.target.value)} />
-            <input type='text' placeholder='Description' value={description} onChange={ev => setDescription(ev.target.value)}/>
+            <input type='text' placeholder='Titre' value={subject} onChange={ev => setSubject(ev.target.value)} />
+            <input className='formPlaces1' type='text' placeholder='Description' value={description} onChange={ev => setDescription(ev.target.value)}/>
             </div>
                 <div>
                 <select className="select" value={category} onChange={ev => setCategory(ev.target.value)}>
-
                     <option value="Avant le depart">Avant le depart</option>
+                    <option value="Todo">Todo</option>
                     <option value="Navigation">Navigation</option>
-                    <option value="Multicoques">Multicoques</option>
-                    <option value="pharmacie">pharmacie</option>
+                    <option value="Voilier">Voilier</option>
+                    <option value="Pharmacie">Pharmacie</option>
                     <option value="Document">Document</option>
                 </select>
-                <button onClick={() => saveTodoSubject()}>Add</button>
+                <button className='add' onClick={() => saveTodoSubject()}>Ajouter</button>
             </div>
         </div>
 

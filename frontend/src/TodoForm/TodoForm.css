@@ -1,47 +1,52 @@
 
 .photo1 {
-    margin-left: 550px;
-    border: solid #2141be 2px;
-    width: 350px;
-    height: 200px;
+    border-radius: 20px;
+    margin-left: 20px;
+    width: 250px;
+    height: 150px;
 }
 
 .photo {
-    margin-left: 193px;
-    border: solid #9fa5c5 2px;
-    width: 350px;
-    height: 200px;
+    border-radius: 20px;
+    margin-left: 20px;
+    width: 250px;
+    height: 150px;
 }
 
 .titre {
-    font-family: "sans-serif";
-
+    padding: 5px;
+    margin-left: 20px;
+    font-family: sans-serif;
+    margin-top: -260px;
     color: rgba(0, 0, 0, 0.54);
-    text-decoration: underline;
+
+
 }
 
 
 .formPlaces {
 
-    position: absolute;
-    margin-left: 550px;
+    border-radius:  15px;
+    margin-left: 650px;
+}
+.formPlaces1{
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .select {
-    border: solid 1px;
-    margin-top: 1px;
-    margin-left: 850px;
+    border-radius:  5px;
+    margin-left: 650px;
 }
 
 
-.buttonAdd {
 
-    background-color: transparent;
-    border: 1px solid #a071b8;
-    color: #a071b8;
-    cursor: pointer;
-    font-size: .9rem;
-    padding: 0.16667rem 0.33333rem;
+.add{
+    font-family: sans-serif;
+    margin-top: -21px;
+    position: absolute;
+    margin-left: 200px;
+    border-radius: 5px;
 }
 
 
